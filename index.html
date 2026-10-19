@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Undangan Digital</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display & Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FontAwesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+      .font-serif-custom {
+        font-family: "Playfair Display", serif;
+      }
+    </style>
+  </head>
+  <body class="bg-stone-50 text-stone-800 antialiased">
+    <!-- COVER / HALAMAN PEMBUKA -->
+    <section
+      id="cover"
+      class="fixed inset-0 z-50 bg-stone-900 text-white flex flex-col items-center justify-center text-center p-6 transition-all duration-700"
+    >
+      <h3 class="text-sm uppercase tracking-widest text-stone-400 mb-2">
+        The Wedding Of
+      </h3>
+      <h1
+        id="cover-title"
+        class="font-serif-custom text-4xl md:text-6xl font-bold mb-4 text-amber-100"
+      >
+        Budi & Siti
+      </h1>
+      <p class="text-stone-300 text-sm mb-6">
+        Kepada Yth. Bapak/Ibu/Saudara/i,
+      </p>
+      <div
+        id="guest-box"
+        class="bg-stone-800 border border-stone-700 px-6 py-3 rounded-lg mb-8 shadow-inner"
+      >
+        <span id="guest-name" class="font-semibold text-lg text-amber-200"
+          >Tamu Undangan</span
+        >
+      </div>
+      <button
+        onclick="openInvitation()"
+        class="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-full font-medium transition duration-300 shadow-lg flex items-center gap-2"
+      >
+        <i class="fa-solid fa-envelope-open-text"></i> Buka Undangan
+      </button>
+    </section>
+
+    <!-- KONTEN UTAMA UNDANGAN -->
+    <div id="main-content" class="hidden">
+      <!-- Hero Section -->
+      <header
+        class="min-h-screen flex flex-col items-center justify-center text-center p-6 bg-cover bg-center relative"
+        style="
+          background-image:
+            linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+            url(&quot;https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80&quot;);
+        "
+      >
+        <div class="text-white max-w-2xl">
+          <p class="uppercase tracking-widest text-sm mb-3 text-amber-200">
+            Kami Mengundang Anda
+          </p>
+          <h1
+            id="main-couple-title"
+            class="font-serif-custom text-5xl md:text-7xl font-bold mb-6"
+          >
+            Budi & Siti
+          </h1>
+          <p id="main-date" class="text-lg font-light mb-8">
+            Minggu, 25 Desember 2026
+          </p>
+          <a
+            href="#countdown"
+            class="inline-block border border-white/60 hover:bg-white hover:text-stone-900 transition px-6 py-2 rounded-full text-sm"
+            >Menuju Acara</a
+          >
+        </div>
+      </header>
+
+      <!-- Informasi Acara -->
+      <section class="py-20 px-6 max-w-4xl mx-auto text-center">
+        <h2 class="font-serif-custom text-3xl font-bold mb-4">
+          Acara Pernikahan
+        </h2>
+        <p class="text-stone-600 max-w-lg mx-auto mb-12 text-sm">
+          Tanpa mengurangi rasa hormat, kami bermaksud mengundang
+          Bapak/Ibu/Saudara/i pada acara pernikahan kami.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <div
+            class="bg-white p-8 rounded-2xl shadow-sm border border-stone-200"
+          >
+            <h3
+              class="font-serif-custom text-2xl font-bold mb-2 text-amber-800"
+            >
+              Akad Nikah
+            </h3>
+            <p class="text-stone-600 text-sm mb-4">Pukul 08.00 WIB - Selesai</p>
+            <p id="location-name" class="font-medium text-stone-800">
+              Gedung Serbaguna Merdeka
+            </p>
+            <p id="location-address" class="text-stone-500 text-xs mt-1 mb-6">
+              Jl. Merdeka No. 45, Jakarta Pusat
+            </p>
+            <a
+              id="gmap-link"
+              href="#"
+              target="_blank"
+              class="inline-block bg-stone-900 text-white text-xs px-4 py-2 rounded-lg hover:bg-stone-800 transition"
+              >Buka Google Maps</a
+            >
+          </div>
+          <div
+            class="bg-white p-8 rounded-2xl shadow-sm border border-stone-200"
+          >
+            <h3
+              class="font-serif-custom text-2xl font-bold mb-2 text-amber-800"
+            >
+              Resepsi
+            </h3>
+            <p class="text-stone-600 text-sm mb-4">Pukul 11.00 - 13.00 WIB</p>
+            <p class="font-medium text-stone-800">Gedung Serbaguna Merdeka</p>
+            <p class="text-stone-500 text-xs mt-1 mb-6">
+              Jl. Merdeka No. 45, Jakarta Pusat
+            </p>
+            <a
+              href="#"
+              class="inline-block bg-stone-900 text-white text-xs px-4 py-2 rounded-lg hover:bg-stone-800 transition"
+              >Buka Google Maps</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Fitur Plus: Amplop Digital / Hadiah -->
+      <section class="py-16 px-6 bg-stone-100 border-y border-stone-200">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="font-serif-custom text-3xl font-bold mb-4">Tanda Kasih</h2>
+          <p class="text-stone-600 text-sm mb-10">
+            Doa restu Anda merupakan karunia terindah bagi kami. Namun jika Anda
+            ingin memberikan tanda kasih, dapat melalui:
+          </p>
+
+          <div id="gift-container" class="grid md:grid-cols-2 gap-6 text-left">
+            <!-- Data Gift akan dirender otomatis via JS dari PocketBase -->
+            <div
+              class="bg-white p-6 rounded-xl border border-stone-200 shadow-sm"
+            >
+              <div class="flex justify-between items-center mb-3">
+                <span class="font-bold text-amber-800">BCA</span>
+                <button
+                  onclick="copyText('1234567890')"
+                  class="text-xs bg-stone-100 hover:bg-stone-200 px-3 py-1 rounded transition"
+                >
+                  Salin No. Rek
+                </button>
+              </div>
+              <p class="text-xs text-stone-500">No. Rekening</p>
+              <p class="font-mono font-semibold text-lg mb-2">1234-5678-90</p>
+              <p class="text-xs text-stone-600">a.n. Budi Santoso</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Buku Tamu & RSVP -->
+      <section class="py-20 px-6 max-w-3xl mx-auto">
+        <h2 class="font-serif-custom text-3xl font-bold text-center mb-4">
+          Buku Tamu & RSVP
+        </h2>
+        <p class="text-stone-600 text-center text-sm mb-10">
+          Konfirmasi kehadiran dan berikan ucapan selamat untuk kedua mempelai.
+        </p>
+
+        <!-- Form Input -->
+        <form
+          id="rsvp-form"
+          onsubmit="submitRsvp(event)"
+          class="bg-white p-8 rounded-2xl shadow-sm border border-stone-200 mb-12 space-y-4"
+        >
+          <div>
+            <label class="block text-xs font-medium text-stone-600 mb-1"
+              >Nama Lengkap</label
+            >
+            <input
+              type="text"
+              id="rsvp-name"
+              required
+              class="w-full border border-stone-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-600"
+            />
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-medium text-stone-600 mb-1"
+                >Konfirmasi Kehadiran</label
+              >
+              <select
+                id="rsvp-attendance"
+                class="w-full border border-stone-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-600"
+              >
+                <option value="hadir">Hadir</option>
+                <option value="tidak">Tidak Hadir</option>
+                <option value="ragu">Masih Ragu</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-medium text-stone-600 mb-1"
+                >Jumlah Tamu</label
+              >
+              <input
+                type="number"
+                id="rsvp-pax"
+                value="1"
+                min="1"
+                max="5"
+                class="w-full border border-stone-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-600"
+              />
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-stone-600 mb-1"
+              >Ucapan / Doa</label
+            >
+            <textarea
+              id="rsvp-message"
+              rows="3"
+              required
+              class="w-full border border-stone-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-600"
+              placeholder="Tuliskan ucapan atau doa..."
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="w-full bg-amber-600 hover:bg-amber-700 text-white font-medium py-3 rounded-lg text-sm transition"
+          >
+            Kirim Ucapan & Konfirmasi
+          </button>
+        </form>
+
+        <!-- List Ucapan Realtime -->
+        <div class="space-y-4">
+          <h3 class="font-serif-custom text-xl font-bold mb-4">
+            Daftar Ucapan & Doa
+          </h3>
+          <div id="wishes-list" class="space-y-4 max-h-96 overflow-y-auto pr-2">
+            <!-- Render list ucapan via JS -->
+            <div
+              class="bg-white p-4 rounded-xl border border-stone-200 text-sm"
+            >
+              <div class="flex justify-between items-center mb-1">
+                <span class="font-semibold text-stone-800">Siti Rahma</span>
+                <span class="text-xs text-stone-400">Baru saja</span>
+              </div>
+              <p class="text-stone-600 text-xs">
+                Selamat ya Budi & Siti! Semoga menjadi keluarga yang sakinah,
+                mawaddah, warahmah.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="bg-stone-900 text-stone-400 py-8 text-center text-xs">
+        <p>
+          &copy; 2026 Undangan Digital. Powered by PocketBase & GitHub Pages.
+        </p>
+      </footer>
+    </div>
+
+    <!-- POCKETBASE JS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/pocketbase/dist/pocketbase.umd.js"></script>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>

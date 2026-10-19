@@ -10,6 +10,10 @@ if (guestParam) {
 }
 
 // Fungsi membuka undangan & memutar musik (jika ada)
+let isPlaying = false;
+const bgMusic = document.getElementById("bg-music");
+const musicIcon = document.getElementById("music-icon");
+
 function openInvitation() {
   const cover = document.getElementById("cover");
   const mainContent = document.getElementById("main-content");
@@ -18,9 +22,36 @@ function openInvitation() {
   setTimeout(() => {
     cover.classList.add("hidden");
     mainContent.classList.remove("hidden");
+
+    // Putar musik otomatis setelah tombol "Buka Undangan" diklik
+    playMusic();
+
     loadEventData();
     loadWishesAndRsvp();
   }, 500);
+}
+
+function playMusic() {
+  bgMusic
+    .play()
+    .then(() => {
+      isPlaying = true;
+      musicIcon.className = "fa-solid fa-compact-disc fa-spin"; // Animasi memutar
+    })
+    .catch((err) => {
+      console.log("Autoplay dicegah oleh browser:", err);
+    });
+}
+
+function toggleMusic() {
+  if (isPlaying) {
+    bgMusic.pause();
+    musicIcon.className = "fa-solid fa-music";
+  } else {
+    bgMusic.play();
+    musicIcon.className = "fa-solid fa-compact-disc fa-spin";
+  }
+  isPlaying = !isPlaying;
 }
 
 // Fungsi mengambil data utama acara berdasarkan slug (misal: /?slug=budi-siti)

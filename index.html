@@ -3,6 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Open Graph / WhatsApp Preview -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Undangan Pernikahan Budi & Siti" />
+    <meta
+      property="og:description"
+      content="Kami mengundang Anda untuk hadir dan memberikan doa restu pada acara pernikahan kami."
+    />
+    <meta
+      property="og:image"
+      content="https://raw.githubusercontent.com/linkundanganku/undangan-digital/main/assets/images/cover-preview.jpg"
+    />
+    <meta
+      property="og:url"
+      content="https://linkundanganku.github.io/undangan-digital/"
+    />
+
     <title>Undangan Digital</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -282,6 +299,18 @@
         </p>
       </footer>
     </div>
+
+    <!-- Floating Audio Controller -->
+    <div class="fixed bottom-6 right-6 z-40">
+      <button
+        id="music-btn"
+        onclick="toggleMusic()"
+        class="bg-amber-600 text-white w-12 h-12 rounded-full shadow-xl flex items-center justify-center text-lg hover:scale-110 transition duration-300"
+      >
+        <i id="music-icon" class="fa-solid fa-music"></i>
+      </button>
+    </div>
+    <audio id="bg-music" loop src="assets/audio/wedding-song.mp3"></audio>
 
     <!-- POCKETBASE JS SDK -->
     <script src="https://cdn.jsdelivr.net/npm/pocketbase/dist/pocketbase.umd.js"></script>
